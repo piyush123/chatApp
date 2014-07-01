@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
             
@@ -18,9 +20,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    [Parse setApplicationId:@"0WdAoDlfFas3rwS1HCKpW2mXgmS6RO9oGes742SE"
+                  clientKey:@"vO6YY38d2I9Ij0RB1d2ReIl0LJfeK22Ga81HSrsY"];
+    LoginViewController *vc = [[LoginViewController alloc]init];
+    
+    self.window.rootViewController = vc;
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+   
     return YES;
 }
 
